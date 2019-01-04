@@ -40,12 +40,12 @@ class Ball:#création de la balle
             self.y = 3
         if pos[2] >= self.canvas_width:
             self.x = -3
-            self.score(False)
+            self.score(True)
         if pos[3] >= self.canvas_height:
             self.y = -3
         if pos[0] <= 0:
             self.x = 3
-            self.score(True)
+            self.score(False)
         if self.hit_paddle(pos) == True:
             self.x = 3
         if self.hit_paddle1(pos) == True:
@@ -135,20 +135,20 @@ while 1:
     paddle.draw()
     paddle1.draw()
     
-    if point == 10:
-        ball.x = 0
-        ball.y = 0
-        paddle.y = 0
-        paddle1.y = 0
-        canvas.create_text(250,200,text="BienJouéJ1!C'estGagné!",font=32,fill='red')
-        canvas.create_text(250,215,text="Score:"+str(point1)+"-"+str(point1),font=32,fill='red')
-    if point1 == 10:
+    if point == 5:
         ball.x = 0
         ball.y = 0
         paddle.y = 0
         paddle1.y = 0
         canvas.create_text(250,200,text="BienJouéJ2!C'estGagné!",font=32,fill='red')
-        canvas.create_text(250,215,text="Score:"+str(point)+"-"+str(point),font=32,fill='red')
+        canvas.create_text(250,215,text="Score:"+str(point)+"-"+str(point1),font=32,fill='red')
+    if point1 == 5:
+        ball.x = 0
+        ball.y = 0
+        paddle.y = 0
+        paddle1.y = 0
+        canvas.create_text(250,200,text="BienJouéJ1!C'estGagné!",font=32,fill='red')
+        canvas.create_text(250,215,text="Score:"+str(point)+"-"+str(point1),font=32,fill='red')
 
     tk.update_idletasks()
     tk.update()
