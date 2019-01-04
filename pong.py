@@ -156,3 +156,5 @@ while 1:
 
     if point == 5 or point1 ==5:
         time.sleep(10)
+
+tk.mainloop()
